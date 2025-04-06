@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Location Spotlight - Georgetown</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+	/* Reset and Base Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: #f5f6f5;
+	color: #2c3e50;
+	line-height: 1.6;
+}
+
+/* Location Component Container */
+.location-component {
+	max-width: 1000px;
+	margin: 40px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 16px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	position: relative;
+}
+
+/* Header Section */
+.location-header {
+	background: url("https://images.unsplash.com/photo-1509137705736-c15e10d9ce62?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size:cover;
+	background-position:50 50;
+	background-repeat:no-repeat;
+	color: #fff;
+	padding: 40px 30px;
+	text-align: center;
+	border-radius: 16px 16px 0 0;
+}
+
+.location-header h1 {
+	font-size: 2.75rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.location-header .tagline {
+	font-size: 1.25rem;
+	font-weight: 400;
+	opacity: 0.9;
+}
+
+/* Overview Section */
+.location-overview {
+	padding: 30px;
+}
+
+.location-overview h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #2c3e50;
+}
+
+.location-overview p {
+	font-size: 1.1rem;
+	color: #34495e;
+}
+
+/* Key Stats Section */
+.location-stats {
+	padding: 30px;
+	background: #f9f9f9;
+}
+
+.location-stats h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 20px;
+}
+
+.stat-item {
+	text-align: center;
+	padding: 15px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+	transform: translateY(-5px);
+}
+
+.stat-value {
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	color: #3498db;
+	margin-bottom: 5px;
+}
+
+.stat-label {
+	font-size: 0.9rem;
+	color: #7f8c8d;
+}
+
+/* Target Audience Section */
+.location-audience {
+	padding: 30px;
+}
+
+.location-audience h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.location-audience ul {
+	list-style: none;
+	padding-left: 20px;
+}
+
+.location-audience li {
+	font-size: 1.1rem;
+	color: #34495e;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.location-audience li::before {
+	content: "→";
+	color: #e74c3c;
+	position: absolute;
+	left: -20px;
+}
+
+/* SEO Strategy Section */
+.location-strategy {
+	padding: 30px;
+	background: #f9f9f9;
+}
+
+.location-strategy h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.strategy-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.strategy-item {
+	padding: 20px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	transition: box-shadow 0.3s ease;
+}
+
+.strategy-item:hover {
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.strategy-item h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #2c3e50;
+	margin-bottom: 10px;
+}
+
+.strategy-item p {
+	font-size: 1rem;
+	color: #34495e;
+}
+
+/* Call to Action */
+.location-cta {
+	padding: 30px;
+	text-align: center;
+}
+
+.cta-button {
+	padding: 15px 30px;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #fff;
+	background: linear-gradient(90deg, #3498db, #e74c3c);
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.location-header h1 {
+		font-size: 2.25rem;
+	}
+
+	.location-header .tagline {
+		font-size: 1rem;
+	}
+
+	.location-overview h2,
+	.location-stats h2,
+	.location-audience h2,
+	.location-strategy h2 {
+		font-size: 1.5rem;
+	}
+
+	.stats-grid,
+	.strategy-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cta-button {
+		font-size: 1rem;
+		padding: 12px 25px;
+	}
+}
+
+@media (max-width: 480px) {
+	.location-header {
+		padding: 30px 20px;
+	}
+
+	.location-header h1 {
+		font-size: 1.75rem;
+	}
+
+	.location-overview,
+	.location-stats,
+	.location-audience,
+	.location-strategy,
+	.location-cta {
+		padding: 20px;
+	}
+}
+
+	</style>
+</head>
+
+<body>
+	<section class="location-component" data-location="georgetown">
+		<!-- Header Section -->
+		<div class="location-header">
+			<h1>Georgetown Spotlight</h1>
+			<p class="tagline">High-income, high-intent.</p>
+		</div>
+
+		<!-- Overview Section -->
+		<div class="location-overview">
+			<h2>Why Georgetown?</h2>
+			<p>We create SEO strategies tailored for luxury services, boutiques, and professionals looking to connect with Georgetown’s discerning clientele. This historic neighborhood blends old-world charm with modern affluence, making it a prime target for premium branding and local search dominance.</p>
+		</div>
+
+		<!-- Key Stats Section -->
+		<div class="location-stats">
+			<h2>Key Stats</h2>
+			<div class="stats-grid">
+				<div class="stat-item">
+					<span class="stat-value">35K+</span>
+					<span class="stat-label">Median Household Income</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-value">85%</span>
+					<span class="stat-label">Homeownership Rate</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-value">12K</span>
+					<span class="stat-label">Population</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Target Audience Section -->
+		<div class="location-audience">
+			<h2>Target Audience</h2>
+			<ul>
+				<li>Affluent residents seeking luxury goods and services</li>
+				<li>Professionals in law, finance, and consulting</li>
+				<li>Tourists drawn to historic charm and upscale dining</li>
+			</ul>
+		</div>
+
+		<!-- SEO Strategy Section -->
+		<div class="location-strategy">
+			<h2>Our SEO Strategy</h2>
+			<div class="strategy-grid">
+				<div class="strategy-item">
+					<h3>Localized Content</h3>
+					<p>Blog posts and landing pages highlighting Georgetown’s unique lifestyle and businesses.</p>
+				</div>
+				<div class="strategy-item">
+					<h3>Premium Keywords</h3>
+					<p>Targeting high-value terms like “luxury Georgetown boutiques” and “Georgetown professional services.”</p>
+				</div>
+				<div class="strategy-item">
+					<h3>Authority Building</h3>
+					<p>Securing backlinks from local influencers and high-end directories.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Call to Action -->
+		<div class="location-cta">
+			<button class="cta-button">Optimize for Georgetown Now</button>
+		</div>
+	</section>
+
+</body>
+
+</html>
